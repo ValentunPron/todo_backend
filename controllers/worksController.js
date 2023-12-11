@@ -20,7 +20,8 @@ export const postWork = async (req, res) => {
 export const getWorks = async (req, res) => {
 	try {
 		const works = await worksModel.find();
-
+		
+		console.log(works);
 		res.status(200).json(works);
 	} catch (error) {
 		console.log(error);
