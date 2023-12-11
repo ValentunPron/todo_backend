@@ -21,7 +21,9 @@ export const getWorks = async (req, res) => {
 	try {
 		const works = await worksModel.find();
 		
-		console.log(works.title);
+		works.forEach((work, element) => {
+			console.log(element, work.title);
+		});
 		res.status(200).json(works);
 	} catch (error) {
 		console.log(error);
